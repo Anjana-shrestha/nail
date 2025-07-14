@@ -1,0 +1,244 @@
+/* Reset and base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: linear-gradient(135deg, #fceaff, #ffe7f2);
+  min-height: 100vh;
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 1px 6px rgba(0,0,0,0.1);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #d63384;
+  cursor: pointer;
+  font-family: 'Pacifico', cursive;
+
+
+
+}
+.logo:hover {
+  color: #fff;
+  text-shadow: 0 0 5px #f0f, 
+               0 0 10px #f0f, 
+               0 0 20px #f0f, 
+               0 0 40px #f0f;
+}
+
+.nav-links a {
+  margin-left: 1.5rem;
+  text-decoration: none;
+  font-weight: 600;
+  color: #444;
+  position: relative;
+  font-family: 'Dancing Script', cursive;
+  
+}
+
+.nav-links a:hover::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 100%;
+  height: 2px;
+  background-color: #d63384;
+  border-radius: 2px;
+}
+
+/* Hero on index */
+.hero {
+  max-width: 700px;
+  margin: 3rem auto;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.hero img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  box-shadow: 0 0 15px rgba(214, 51, 132, 0.5);
+  margin-bottom: 1.5rem;
+}
+  .hero img:hover {
+  box-shadow: 0 0 25px rgba(214, 51, 132, 0.7);
+}
+.hero p {
+  font-size: 1.2rem;
+  color: #333;
+  line-height: 1.6;
+}
+.about-anjana {
+  max-width: 700px;
+  margin: 2rem auto 4rem;
+  padding: 0 1rem;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(214, 51, 132, 0.15);
+  color: #333;
+  text-align: center;
+}
+
+.about-anjana h2 {
+  color: #d63384;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.about-anjana p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+
+/* Gallery grid */
+.gallery {
+  max-width: 1000px;
+  margin: 3rem auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  padding: 0 1rem 3rem;
+}
+
+.card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(214, 51, 132, 0.1);
+  cursor: pointer;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;  /* square images */
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.card:hover img {
+  transform: scale(1.05);
+}
+
+.info {
+  padding: 0.75rem 1rem;
+  text-align: center;
+}
+
+.info p {
+  margin-bottom: 0.5rem;
+  color: #555;
+  font-weight: 600;
+}
+
+.info a {
+  background-color: #d63384;
+  color: #fff;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.info a:hover {
+  background-color: #a02058;
+}
+
+/* Modal for full image */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.modal-content {
+  text-align: center;
+}
+
+.modal img {
+  max-width: 90vw;
+  max-height: 80vh;
+  border-radius: 10px;
+}
+
+.modal-note {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #fff;
+  font-style: italic;
+  opacity: 0.8;
+}
+.modal-note a {
+  color: #fceaff;
+  text-decoration: none;
+}
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track of the scrollbar */
+::-webkit-scrollbar-track {
+  background: #fff; /* Light background */
+  border-radius: 10px;
+}
+
+/* Thumb of the scrollbar */
+::-webkit-scrollbar-thumb {
+  background: #fceaff;
+  border-radius: 10px;
+  border: 2px solid white; /* For better contrast */
+}
+
+/* Thumb hover effect */
+::-webkit-scrollbar-thumb:hover {
+  background: #f0d9ff; /* Slightly darker for hover effect */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+
+  .hero img {
+    width: 180px;
+    height: 180px;
+  }
+}
